@@ -1,3 +1,4 @@
+.DS_Store
 .vscode
 .idea
 Cargo.lock
@@ -10,3 +11,5 @@ os2-ref/src/link_app.S
 os3-ref/src/link_app.S
 os4-ref/src/link_app.S
 os5-ref/src/link_app.S
+target
+os/target/*

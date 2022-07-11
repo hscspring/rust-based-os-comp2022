@@ -10,6 +10,7 @@ mod lang_items;
 mod logging;
 mod sbi;
 
+// 使用global_asm宏将entry.asm嵌入到代码中
 core::arch::global_asm!(include_str!("entry.asm"));
 
 fn clear_bss() {
