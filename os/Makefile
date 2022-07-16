@@ -22,10 +22,10 @@ $(KERNEL_BIN): kernel
 	@$(OBJCOPY) $(KERNEL_ELF) --strip-all -O binary $@
 
 env:
-	(rustup target list | grep "riscv64gc-unknown-none-elf (installed)") || rustup target add $(TARGET)
-	cargo install cargo-binutils --vers ~0.2
-	rustup component add rust-src
-	rustup component add llvm-tools-preview
+	#(rustup target list | grep "riscv64gc-unknown-none-elf (installed)") || rustup target add $(TARGET)
+	#cargo install cargo-binutils --vers ~0.2
+	#rustup component add rust-src
+	#rustup component add llvm-tools-preview
 
 kernel:
 	@cargo build --release
@@ -33,7 +33,7 @@ kernel:
 clean:
 	@cargo clean
 
-run: build
+run: 
 	@qemu-system-riscv64 \
 		-machine virt \
 		-nographic \
